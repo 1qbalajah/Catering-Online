@@ -1,0 +1,12 @@
+services:
+  catering-online:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: catering-online:latest
+    container_name: catering-online
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
